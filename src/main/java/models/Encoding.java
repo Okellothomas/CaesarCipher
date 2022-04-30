@@ -10,5 +10,8 @@ public class Encoding {
         this.userInputs = userInputs;
     }
 
+    public boolean isKeySet(){
+        return true;
+    }
 
 }
