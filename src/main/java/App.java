@@ -20,22 +20,20 @@ public class App {
         if (userchoice == 1){
 
             System.out.println("Enter The word to Encode: ");
-            String userString = bufferedReader.readLine();
+            String userString = scanner.nextLine().toUpperCase();
             // get user key.
             System.out.println("Enter the key for encryption:");
-            String userKey = bufferedReader.readLine();
-            int intUserKey = Integer.parseInt(userKey);
+            int intUserKey = scanner.nextInt();
             Encoding encoding = new Encoding(intUserKey, userString);
             System.out.println(encoding.encode());
 
         } else if (userchoice == 2){
 
             System.out.println("Enter The word to Decode: ");
-            String userString = bufferedReader.readLine();
+            String userString = bufferedReader.readLine().toUpperCase();
             // get user key.
             System.out.println("Enter the key for decoding:");
-            String userKey = bufferedReader.readLine();
-            int intUserKey = Integer.parseInt(userKey);
+            int intUserKey = scanner.nextInt();
             Decoding decoding = new Decoding(intUserKey, userString);
             System.out.println(decoding.decode());
 
@@ -43,6 +41,5 @@ public class App {
             System.out.println("Enter either 1 or 2");
         }
 
-// one sure
     }
 }
