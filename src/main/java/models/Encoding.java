@@ -19,7 +19,7 @@ public class Encoding {
         return this.userInputs;
     }
 
-   public String encode(){
+   public String enicode(){
        String theAlphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
        String userInput = userInputs.toLowerCase();
 
@@ -27,29 +27,30 @@ public class Encoding {
 
         for (int k = 0; k < userInput.length(); k++){
             int inputValueInInteger = theAlphabets.indexOf(userInput.charAt(k));
-            int alphabetLocation = (inputValueInInteger + inputKeys) % 26;int replacingAlphabet = theAlphabets.charAt(alphabetLocation);
+            int alphabetLocation = (inputValueInInteger + inputKeys) % 26;
+            int replacingAlphabet = theAlphabets.charAt(alphabetLocation);
             encodedText = replacingAlphabet + encodedText;
         }
         return encodedText;
     }
 
-    public String enicode()
+    public String encode()
     {
         String encoded = "";
         String encodedArray[] = userInputs.split("");
         String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         for (int i = 0; i<encodedArray.length;i++)
         {
-            if (userInputs.charAt(i) == ' ')
-            {
-                encoded += " ";
-            }
-            else
-            {
+//            if (userInputs.charAt(i) == ' ')
+//            {
+//                encoded += " ";
+//            }
+//            else
+//            {
                 int charPosition = alphabet.indexOf(userInputs.charAt(i));
                 int key = (inputKeys + charPosition) % 26;
                 encoded += alphabet.charAt(key);
-            }
+//            }
         }
         return encoded.toUpperCase();
     }
