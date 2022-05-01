@@ -16,6 +16,6 @@ public class App {
         String userKey = bufferedReader.readLine();
         int intUserKey = Integer.parseInt(userKey);
         Encoding encoding = new Encoding(intUserKey, userString);
-        System.out.println(encoding.encode());
+        System.out.println("Your encoded word is: " + encoding.encode());
     }
 }
