@@ -4,6 +4,7 @@ public class Decoding {
 
     private int inputKey;
     private String userInput;
+    public static String theAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     public Decoding(int inputKey, String userInput) {
         this.inputKey = inputKey;
@@ -20,30 +21,22 @@ public class Decoding {
 
     public String decode()
     {
-        String decodedValue = "";
-        String encodedArray[] = userInput.split("");
-        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        for (int i = 0; i<encodedArray.length;i++)
+        String encipherString = "";
+        String encipheruserArray[] = userInput.split("");
+        for (int p = 0; p<encipheruserArray.length;p++)
         {
-            if (userInput.charAt(i) == ' ')
-            {
-                decodedValue += " ";
-            }
-            else
-            {
-                int charPosition = alphabet.indexOf(userInput.charAt(i));
+                int charPosition = theAlphabet.indexOf(userInput.charAt(p));
                 int keyVal = (charPosition - inputKey) % 26;
 
                 if (keyVal < 0)
                 {
-                    keyVal = alphabet.length() + keyVal;
+                    keyVal = theAlphabet.length() + keyVal;
                 }
 
-                char replaceValue = alphabet.charAt(keyVal);
-                decodedValue += replaceValue;
+                char replaceValue = theAlphabet.charAt(keyVal);
+                encipherString = encipherString + replaceValue;
             }
-        }
-        return decodedValue;
+        return encipherString;
     }
 
 
