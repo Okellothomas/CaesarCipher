@@ -9,9 +9,21 @@ import static org.junit.Assert.*;
 public class EncodingTest {
 
     @Test
-    public void isKeySet_true(){
+    public void getInputKeys(){
         Encoding encoding = new Encoding(1,"one");
-        assertEquals(true, encoding.isKeySet());
+        assertEquals(1, encoding.getInputKeys());
+    }
+
+    @Test
+    public void getUserInputs(){
+        Encoding encoding = new Encoding(1,"one");
+        assertEquals("one", encoding.getUserInputs());
+    }
+
+    @Test
+    public void encode_UserInputString_true(){
+        Encoding encoding = new Encoding(1,"Thomas");
+
     }
 
     @Before
