@@ -4,7 +4,6 @@ public class Encoding {
 
     private int inputKeys;
     private String userInputs;
-    public String theAlphabets = "abcdefghijklmnopqrstuvwxyz";
 
     public Encoding(int inputKeys, String userInputs) {
         this.inputKeys = inputKeys;
@@ -20,22 +19,21 @@ public class Encoding {
         return this.userInputs;
     }
 
-//    public String encode(){ ooo
-//       String userInput = userInputs.toLowerCase();
-//
-//        String encodedText = "";
-//
-//        for (int k = 0; k < userInput.length(); k++){
-//            int inputValueInInteger = theAlphabets.indexOf(userInput.charAt(k));
-//            int alphabetLocation = (inputValueInInteger + inputKeys) % 26;
-//            int replacingAlphabet = theAlphabets.charAt(alphabetLocation);
-//
-//            encodedText = replacingAlphabet + encodedText;
-//        }
-//        return encodedText;
-//    }
+   public String encode(){
+       String theAlphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+       String userInput = userInputs.toLowerCase();
 
-    public String encode()
+        String encodedText = "";
+
+        for (int k = 0; k < userInput.length(); k++){
+            int inputValueInInteger = theAlphabets.indexOf(userInput.charAt(k));
+            int alphabetLocation = (inputValueInInteger + inputKeys) % 26;int replacingAlphabet = theAlphabets.charAt(alphabetLocation);
+            encodedText = replacingAlphabet + encodedText;
+        }
+        return encodedText;
+    }
+
+    public String enicode()
     {
         String encoded = "";
         String encodedArray[] = userInputs.split("");
