@@ -20,6 +20,14 @@ public class Encoding {
         return userInputs;
     }
 
+    public void setInputKeys(int inputKeys) {
+        this.inputKeys = inputKeys;
+    }
+
+    public void setUserInputs(String userInputs) {
+        this.userInputs = userInputs;
+    }
+
     public String encode()
     {
         String  cipherText = "";

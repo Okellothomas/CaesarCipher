@@ -19,6 +19,14 @@ public class Decoding {
         return userInput.toLowerCase();
     }
 
+    public void setInputKey(int inputKey) {
+        this.inputKey = inputKey;
+    }
+
+    public void setUserInput(String userInput) {
+        this.userInput = userInput;
+    }
+
     public String decode()
     {
         String encipherString = "";
