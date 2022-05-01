@@ -4,7 +4,7 @@ public class Encoding {
 
     private int inputKeys;
     private String userInputs;
-    public String theAlphabets = "abcdefghijklmnopqrstuvwxyz";
+    public static String theAlphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     public Encoding(int inputKeys, String userInputs) {
         this.inputKeys = inputKeys;
@@ -12,48 +12,26 @@ public class Encoding {
     }
 
     public int getInputKeys() {
-        return this.inputKeys;
+        return inputKeys;
     }
 
 
     public String getUserInputs() {
-        return this.userInputs;
+        return userInputs;
     }
-
-//    public String encode(){ ooo
-//       String userInput = userInputs.toLowerCase();
-//
-//        String encodedText = "";
-//
-//        for (int k = 0; k < userInput.length(); k++){
-//            int inputValueInInteger = theAlphabets.indexOf(userInput.charAt(k));
-//            int alphabetLocation = (inputValueInInteger + inputKeys) % 26;
-//            int replacingAlphabet = theAlphabets.charAt(alphabetLocation);
-//
-//            encodedText = replacingAlphabet + encodedText;
-//        }
-//        return encodedText;
-//    }
 
     public String encode()
     {
-        String encoded = "";
-        String encodedArray[] = userInputs.split("");
-        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        for (int i = 0; i<encodedArray.length;i++)
+        String  cipherText = "";
+        String cipherArray[] = userInputs.split("");
+        for (int i = 0; i<cipherArray.length;i++)
         {
-            if (userInputs.charAt(i) == ' ')
-            {
-                encoded += " ";
-            }
-            else
-            {
-                int charPosition = alphabet.indexOf(userInputs.charAt(i));
+                int charPosition = theAlphabets.indexOf(userInputs.charAt(i));
                 int key = (inputKeys + charPosition) % 26;
-                encoded += alphabet.charAt(key);
-            }
+                cipherText += theAlphabets.charAt(key);
         }
-        return encoded.toUpperCase();
+        return cipherText.toUpperCase();
     }
+
 
 }
