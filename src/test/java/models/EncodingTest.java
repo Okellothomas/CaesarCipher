@@ -22,8 +22,8 @@ public class EncodingTest {
 
     @Test
     public void encode_UserInputString_true(){
-        Encoding encoding = new Encoding(1,"Thomas");
-
+        Encoding encoding = new Encoding(1,"o");
+        assertEquals("A",encoding.encode());
     }
 
     @Before

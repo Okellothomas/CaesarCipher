@@ -24,9 +24,9 @@ public class Encoding {
     {
         String  cipherText = "";
         String cipherArray[] = userInputs.split("");
-        for (int i = 0; i<cipherArray.length;i++)
+        for (int p = 0; p<cipherArray.length;p++)
         {
-                int charPosition = theAlphabets.indexOf(userInputs.charAt(i));
+                int charPosition = theAlphabets.indexOf(userInputs.charAt(p));
                 int key = (inputKeys + charPosition) % 26;
                 cipherText += theAlphabets.charAt(key);
         }
