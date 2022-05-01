@@ -1,4 +1,4 @@
-# Ceacer Cipher
+# Ceaser Cipher
 
 This is a java application that receives a user input and then encode them depending on the key provided by the user, the application is also able to decode the same user input into the original input by decoding algorithm or logic.
 ### By Okello Thomas Olal, 04/29/2022
