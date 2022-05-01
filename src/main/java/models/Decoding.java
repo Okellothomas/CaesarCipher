@@ -10,5 +10,16 @@ public class Decoding {
         this.userInput = userInput;
     }
 
+    public int getInputKey() {
+        return inputKey;
+    }
+
+    public String getUserInput() {
+        return userInput.toLowerCase();
+    }
+
+
+
 
 }
+
