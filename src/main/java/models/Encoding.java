@@ -30,15 +30,15 @@ public class Encoding {
 
     public String encode()
     {
-        String  cipherText = "";
+        String  userStringInput = "";
         String cipherArray[] = userInputs.split("");
         for (int p = 0; p<cipherArray.length;p++)
         {
-                int charPosition = theAlphabets.indexOf(userInputs.charAt(p));
-                int key = (inputKeys + charPosition) % 26;
-                cipherText += theAlphabets.charAt(key);
+            int positionofCharacter = theAlphabets.indexOf(userInputs.charAt(p));
+            int inputUserKey = (inputKeys + positionofCharacter) % 26;
+            userStringInput = userStringInput + theAlphabets.charAt(inputUserKey);
         }
-        return cipherText.toUpperCase();
+        return userStringInput.toUpperCase();
     }
 
 
