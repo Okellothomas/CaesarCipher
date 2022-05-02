@@ -33,15 +33,15 @@ public class Decoding {
         String encipheruserArray[] = userInput.split("");
         for (int p = 0; p<encipheruserArray.length;p++)
         {
-                int charPosition = theAlphabet.indexOf(userInput.charAt(p));
-                int keyVal = (charPosition - inputKey) % 26;
+                int positionOfCharacter = theAlphabet.indexOf(userInput.charAt(p));
+                int inputUserKey = (positionOfCharacter - inputKey) % 26;
 
-                if (keyVal < 0)
+                if (inputUserKey < 0)
                 {
-                    keyVal = theAlphabet.length() + keyVal;
+                    inputUserKey = theAlphabet.length() + inputUserKey;
                 }
 
-                char replaceValue = theAlphabet.charAt(keyVal);
+                char replaceValue = theAlphabet.charAt(inputUserKey);
                 encipherString = encipherString + replaceValue;
             }
         return encipherString;
